@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Christmas Party Date Voting</h2>
+<p>Click on the dates to cast your vote:</p>
+
+<button onclick="vote('25')">25th December</button>
+<button onclick="vote('26')">26th December</button>
+<button onclick="vote('27')">27th December</button>
+<button onclick="vote('28')">28th December</button>
+<button onclick="vote('29')">29th December</button>
+<button onclick="vote('30')">30th December</button>
+
+<p id="result"></p>
+
+<script>
+// Initialize the vote counts
+if (!localStorage.getItem('25')) {
+  localStorage.setItem('25', '0');
+}
+// Do this for all dates
+
+function vote(date) {
+  // Increment the vote count
+  let count = parseInt(localStorage.getItem(date));
+  localStorage.setItem(date, count + 1);
+
+  // Display the vote counts
+  document.getElementById("result").innerHTML = "Votes:<br>" +
+    "25th December: " + localStorage.getItem('25') + "<br>" +
+    // Do this for all dates
+}
+</script>
+
+</body>
+</html>
